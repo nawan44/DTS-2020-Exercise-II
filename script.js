@@ -2,10 +2,6 @@ let prevNumber = ''
 let calculatorOperator = ''
 let currentNumber = '0'
 
-
-
-
-
 const calculatorScreen = document.querySelector('.calculator-screen')
 const updateScreen = (number) => {
     calculatorScreen.value = number
@@ -18,12 +14,6 @@ numbers.forEach((number) => {
     })
 })
 
-
-
-
-
-
-
 const inputNumber = (number) => {
     if (currentNumber === '0') {
         currentNumber = number
@@ -31,8 +21,6 @@ const inputNumber = (number) => {
         currentNumber += number
     }
 }
-
-
 
 const operators = document.querySelectorAll(".operator")
 operators.forEach((operator) => {
@@ -49,8 +37,8 @@ const inputOperator = (operator) => {
 
 const equalSign = document.querySelector('.equal-sign')
 equalSign.addEventListener('click', () => {
-calculate()
-updateScreen(currentNumber)
+    calculate()
+    updateScreen(currentNumber)
 })
 
 const calculate = () => {
@@ -73,15 +61,14 @@ const calculate = () => {
 
     }
     currentNumber = result
-    calculationOperator =''
+    calculationOperator = ''
 }
 
 const clearBtn = document.querySelector('.all-clear')
 clearBtn.addEventListener('click', () => {
-clearAll()
-updateScreen(currentNumber)
+    clearAll()
+    updateScreen(currentNumber)
 })
-
 
 const clearAll = () => {
     prevNumber = ''
@@ -97,7 +84,7 @@ clearBtn.addEventListener('click', () => {
 const decimal = document.querySelector('.decimal')
 decimal.addEventListener('click', (event) => {
     inputDecimal = (dot) => {
-        if(currentNumber.includes('.')){
+        if (currentNumber.includes('.')) {
             return
         }
         currentNumber += dot
